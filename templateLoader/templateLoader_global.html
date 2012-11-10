@@ -1,0 +1,32 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>jTemplater: Global</title>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+<script type="text/javascript" src="libs/jquery.tmpl.js"></script>
+<script type="text/javascript" src="plugin/jquery.templateLoader.js"></script>
+
+<script id="book_template" type="text/x-jQuery-tmpl">
+	<div>
+		<h2>Hello</h2>
+		<p>${date}</p>
+	</div>
+</script>
+
+<script type="text/javascript">
+function init(){
+	// Create a named, compiled version of the template
+	tmpl = {};	// Namespace
+	var templates = ['book_template'];
+	$.templateLoader(templates, tmpl);
+	
+	// Render it
+	$.tmpl(tmpl.BOOK_TEMPLATE, {date:'today'}).appendTo($('body'));
+}
+</script>
+</head>
+
+<body onload="init();">
+</body>
+</html>
