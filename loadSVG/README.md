@@ -14,8 +14,8 @@ It is assumed that images are organised in folders based on the format, eg 'svg/
 ```
 
 ```javascript
-$(".dynamicImage).loadSVG();
-$(".dynamicImage2).loadSVG('jpg','');
+$(".dynamicImage").loadSVG();
+$(".dynamicImage2").loadSVG('jpg','');
 ```
 
 Becomes:
