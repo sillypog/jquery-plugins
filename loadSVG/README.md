@@ -20,6 +20,6 @@ $(".dynamicImage2").loadSVG('jpg','');
 
 Becomes:
 ```html
-<img class="dynamicImage src="svg/sillypog.svg" />
-<img class="dynamicImage src="sillypog.svg" /> <!-- Or "sillypog.jpg" if SVG not supported -->
+<img class="dynamicImage" src="svg/sillypog.svg" />
+<img class="dynamicImage2" src="sillypog.svg" /> <!-- Or "sillypog.jpg" if SVG not supported -->
 ```
