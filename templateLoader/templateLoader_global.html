@@ -14,16 +14,22 @@
 	</div>
 </script>
 
+<script id="cook_template" type="text/x-jQuery-tmpl">
+	<div>
+		<h2>Bye</h2>
+		<p>${date}</p>
+	</div>
+</script>
+
 <script type="text/javascript">
 function init(){
 	// Create a named, compiled version of the template
 	tmpl = {};	// Namespace
-	/*var templates = $('[type="text/x-jQuery-tmpl"]');
-	$.templateLoader(templates, tmpl);*/
 	$('[type="text/x-jQuery-tmpl"]').compileTemplates(tmpl);
 	
-	// Render it
+	// Render them
 	$.tmpl(tmpl.BOOK_TEMPLATE, {date:'today'}).appendTo($('body'));
+	$.tmpl(tmpl.COOK_TEMPLATE, {date:'later'}).appendTo($('body'));
 }
 </script>
 </head>
