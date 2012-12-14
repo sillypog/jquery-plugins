@@ -18,8 +18,9 @@
 function init(){
 	// Create a named, compiled version of the template
 	tmpl = {};	// Namespace
-	var templates = $('[type="text/x-jQuery-tmpl"]');
-	$.templateLoader(templates, tmpl);
+	/*var templates = $('[type="text/x-jQuery-tmpl"]');
+	$.templateLoader(templates, tmpl);*/
+	$('[type="text/x-jQuery-tmpl"]').compileTemplates(tmpl);
 	
 	// Render it
 	$.tmpl(tmpl.BOOK_TEMPLATE, {date:'today'}).appendTo($('body'));

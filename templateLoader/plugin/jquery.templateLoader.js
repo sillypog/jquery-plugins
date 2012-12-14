@@ -7,14 +7,9 @@
 		factory(jQuery);
 	}
 }(function ($) {
-	$.extend({
-		templateLoader: function(templates, ns){
-			templates.each(function(){
-				var t = $(this),
-					t_id = t.attr('id');
-				ns[t_id.toUpperCase()] = t_id;
-				$.template(t_id, t.remove().html());
-			});
-		}
-	});		// Would be called as $.templateLoader([template],namespace);
+	$.fn.compileTemplates = function(ns){
+		var id = this.attr('id');
+		ns[id.toUpperCase()] = id;
+		$.template(id, this.remove().html());
+	}; // Would be called as $('[type="x-jQuery-tmpl"]').compileTemplates(namespace);
 }));
