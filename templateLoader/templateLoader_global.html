@@ -18,7 +18,7 @@
 function init(){
 	// Create a named, compiled version of the template
 	tmpl = {};	// Namespace
-	var templates = ['book_template'];
+	var templates = $('[type="text/x-jQuery-tmpl"]');
 	$.templateLoader(templates, tmpl);
 	
 	// Render it

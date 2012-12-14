@@ -9,15 +9,12 @@
 }(function ($) {
 	$.extend({
 		templateLoader: function(templates, ns){
-			var i = 0,
-				l = templates.length;
-			for (i; i < l; i++){
-				var t = templates[i];
-					  
-				// Create the hook on the namespace object so that the template can be referenced easily
-				ns[t.toUpperCase()] = t;
-				$.template(t, $('#'+t).remove().html());
-			}
+			templates.each(function(){
+				var t = $(this),
+					t_id = t.attr('id');
+				ns[t_id.toUpperCase()] = t_id;
+				$.template(t_id, t.remove().html());
+			});
 		}
 	});		// Would be called as $.templateLoader([template],namespace);
 }));

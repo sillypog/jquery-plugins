@@ -8,7 +8,7 @@ For example, to compile the template defined in a script with the id 'my_templat
 
 ```javascript
 var templates = {};
-$.templateLoader (['my_template'], templates);
+$.templateLoader ($('[type="text/x-jQuery-tmpl"]'), templates);
 ```
 
 The template can then be referenced by its uppercase name.
